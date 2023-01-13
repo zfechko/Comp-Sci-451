@@ -1,0 +1,59 @@
+---
+title: "ER Model Notes"
+date: today
+format:
+    html:
+        mono_font: "Fira Code"
+        highlight: github
+        toc: true
+---
+
+# Database Design Process
+
+Data Modeling
+
+```{mermaid}
+flowchart TD
+    A[High Level Model] --> B(Translator)
+    B --> C[("RDBMS")]
+```
+
+## Design Process
+
+### Application idea
+```{mermaid}
+flowchart TD
+    A[Application Idea] --> B[Requirement Analysis]
+    B --> C1[Functional Requirements]
+
+    subgraph Software Design
+    C1 --> D1[Requirements Analysis]
+    D1 --> E1[Application design]
+    E1 -- high level specs --> F1[Implementation]
+    F1 --> G1[Testing]
+    G1 --> H1[Application Program]
+    end
+    B --> C2[Data Requirements]
+    subgraph Database Design
+    C2 --> D2[Conceptual Design]
+    D2 --> E2[Logical Design]
+    E2 -- Schema Refinement --> F2[Physical Design]
+
+    end
+
+```
+    
+
+```{dot}
+graph {
+    node [fontname = "Helvetica"]
+    Employee[shape=rect]
+    SSN
+    Name
+    Position
+
+    Employee -- SSN
+    Employee -- Name
+    Employee -- Position
+}
+```

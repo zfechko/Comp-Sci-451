@@ -1,0 +1,42 @@
+---
+title: "Cpts 451 HW 1"
+author: "Zach Fechko (011711215)"
+date: today
+format:
+    html:
+        mono_font: "Fira Code"
+        highlight-style: github
+    pdf: 
+        mono_font: "Fira Code"
+        highlight-style: github
+---
+
+# Question 1
+A chain of pharmacy stores has asked you to design its database. Here's the information that you gather:  
+
+- Patients are identified by their SSN. For each patient, the name, address, and age must be recorded
+- Doctors are identified by their SSN. For each doctor, their name, specialty, and years of experience must be recorded
+- Each clinic is identified by its name and the city it is in. A clinic’s name is assumed to be unique within the city.
+- Doctors work for clinics. Each doctor should be associated with at least one clinic
+- Every patient has one primary physician. Every doctor has at least one patient
+- Each drug company is identified by name and has a phone number
+- For each drug, the name and formula must be recorded. Each drug is made by a given drug company, and the drug name identifies a drug uniquely among the products of that company. If a drug company is deleted, you need not keep track of its products any longer
+- Each pharmacy has a unique name and has a phone number. A pharmacy can either be an in-store pharmacy (which has an address) or an online pharmacy (which has a webURL).
+- Each pharmacy sells several drugs and has a price for each. A drug could be sold at several pharmacies, and the price could vary from one pharmacy to another.
+- Doctors write prescriptions for patients. A doctor can write prescriptions for many patients and a patient could obtain prescriptions from several doctors.
+- A doctor could prescribe one or more drugs in a prescription. Each prescription has a prescription number and a date associated with it. Each prescription is given to the patient in a certain clinic and the prescription number is unique within the clinic it is
+given
+- Drug companies have long-term contracts with in-store pharmacies. A drug company can have contracts with several in-store pharmacies, and an in-store pharmacy can have contracts with several drug companies. For each contract, you have to store a start date, an end date, and the text of the contract
+- Pharmacies appoint a supervisor for each contract. There must always be a supervisor for each contract.
+
+## Part A
+Draw an ER diagram for the pharmacy database. Make sure that your design captures all implications of the business model. Including:  
+
+- All of the relevant entities and their attributes, including keys
+- All of the relevant relationships and associated attributes, appropriate key constraints for the relationships, and appropriate participation constraints for the relationships
+
+## Part B
+How would your design change if each drug must be sold at a fixed price by all pharmacies?
+
+## Part C
+Make sure that your diagram is clear and easy to read. Make sure to use the ER notation we covered in the lecture notes.
