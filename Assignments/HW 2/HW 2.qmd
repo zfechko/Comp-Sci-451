@@ -1,0 +1,10 @@
+---
+title: "Cpts 451 HW 2"
+author: "Zach Fechko"
+date: today
+format:
+    html:
+        mono_font: "Fira Code"
+        highlight-style: github
+        default-image-extension: svg
+---
