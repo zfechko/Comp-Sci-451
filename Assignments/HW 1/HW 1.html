@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Zach Fechko (011711215)">
-<meta name="dcterms.date" content="2023-01-13">
+<meta name="dcterms.date" content="2023-01-22">
 
 <title>Cpts 451 HW 1</title>
 <style>
@@ -64,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 13, 2023</p>
+      <p class="date">January 22, 2023</p>
     </div>
   </div>
   
@@ -74,6 +74,32 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Question</th>
+<th style="text-align: center;">Points</th>
+<th style="text-align: center;">Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">a</td>
+<td style="text-align: center;">85</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">c</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 <section id="question-1" class="level1">
 <h1>Question 1</h1>
 <p>A chain of pharmacy stores has asked you to design its database. Here’s the information that you gather:</p>
@@ -94,15 +120,22 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <section id="part-a" class="level2">
 <h2 class="anchored" data-anchor-id="part-a">Part A</h2>
-<p>Draw an ER diagram for the pharmacy database. Make sure that your design captures all implications of the business model. Including:</p>
-<ul>
-<li>All of the relevant entities and their attributes, including keys</li>
-<li>All of the relevant relationships and associated attributes, appropriate key constraints for the relationships, and appropriate participation constraints for the relationships</li>
-</ul>
+<p>Draw an ER diagram for the database. Make sure to use the ER notation we covered in the lecture notes.</p>
+<section id="solution" class="level3">
+<h3 class="anchored" data-anchor-id="solution">Solution</h3>
+<p><img src="1a.svg" class="img-fluid" style="width:100.0%"></p>
+</section>
 </section>
 <section id="part-b" class="level2">
 <h2 class="anchored" data-anchor-id="part-b">Part B</h2>
 <p>How would your design change if each drug must be sold at a fixed price by all pharmacies?</p>
+<section id="solution-1" class="level3">
+<h3 class="anchored" data-anchor-id="solution-1">Solution</h3>
+<p>If each drug must be sold at a fixed price, then we move the price from the “sells” relationship to the “drug” entity. This is because the price would become an attribute of the drug, and not a part of the relationship between the drug and the pharmacy.</p>
+<div class="{.width=100%}">
+<p><img src="1b.svg" class="img-fluid"></p>
+</div>
+</section>
 </section>
 <section id="part-c" class="level2">
 <h2 class="anchored" data-anchor-id="part-c">Part C</h2>

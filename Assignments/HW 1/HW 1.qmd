@@ -6,10 +6,19 @@ format:
     html:
         mono_font: "Fira Code"
         highlight-style: github
+        default-image-extension: svg
     pdf: 
         mono_font: "Fira Code"
         highlight-style: github
+        default-image-extension: png
 ---
+
+| Question | Points | Score |
+|:----------:|:--------:|:-------:|
+| a | 85 |  |
+| b | 10 |  |
+| c | 5 |  |
+
 
 # Question 1
 A chain of pharmacy stores has asked you to design its database. Here's the information that you gather:  
@@ -30,13 +39,20 @@ given
 - Pharmacies appoint a supervisor for each contract. There must always be a supervisor for each contract.
 
 ## Part A
-Draw an ER diagram for the pharmacy database. Make sure that your design captures all implications of the business model. Including:  
+Draw an ER diagram for the database. Make sure to use the ER notation we covered in the lecture notes.
 
-- All of the relevant entities and their attributes, including keys
-- All of the relevant relationships and associated attributes, appropriate key constraints for the relationships, and appropriate participation constraints for the relationships
+### Solution
+![](1a){width=100%}
 
 ## Part B
 How would your design change if each drug must be sold at a fixed price by all pharmacies?
+
+### Solution
+If each drug must be sold at a fixed price, then we move the price from the "sells" relationship to the "drug" entity. This is because the price would become an attribute of the drug, and not a part of the relationship between the drug and the pharmacy.
+
+::: {.width=100%}
+![](1b)
+:::
 
 ## Part C
 Make sure that your diagram is clear and easy to read. Make sure to use the ER notation we covered in the lecture notes.
