@@ -173,4 +173,6 @@ For the operations given below, indicate whether execution of the operation woul
 
 
 ## 2.c
-If all tuples in R5 are deleted, what tuples will R2 and R3 contain?
+**If all tuples in R5 are deleted, what tuples will R2 and R3 contain?**
+
+If all the tuples in R5 get deleted, it will cause the tuples in R1 and R4 to be delteed as well. Because R3 references R1, the tuples in R3 will be deleted as well. The tuples in R2 will not be deleted because R2 does not contain any foreign keys.
