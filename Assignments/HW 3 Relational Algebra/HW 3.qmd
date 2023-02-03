@@ -1,0 +1,8 @@
+---
+title: "Cpts 451 HW 3 -- Relational Algebra"
+author: "Zach Fechko (011711215)"
+date: today
+format:
+    pdf:
+        highlight: github
+---
