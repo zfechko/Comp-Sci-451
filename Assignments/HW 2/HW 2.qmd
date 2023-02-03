@@ -9,25 +9,6 @@ format:
 
 # Question 1
 
-## Checklist
-
-### Entities
-- [x] Patient
-- [x] Doctor
-- [x] Clinic
-- [x] Presciption
-- [x] Drug
-- [x] Drug Company
-- [x] Pharmacy (online or physical)
-
-### Relationships
-- [x] Works for (doctor -- clinic)
-- [x] Prescribes (doctor -- presciption)
-- [x] Includes (drug -- presciption)
-- [x] Sells (pharmacy -- drug)
-- [ ] given in (prescription -- clinic)
-- [ ] produces (drug -- drug company)
-- [x] contract (drug company -- pharmacy)
 
 ```sql
 CREATE TABLE patient(
@@ -79,10 +60,11 @@ CREATE TABLE prescribes( --relation between doctor and presciption
     pat_SSN char(9),
     phys_SSN char(9),
     PRIMARY KEY (pres_num, clinic_name, city, pat_SSN, phys_SSN),
-    FOREIGN KEY (pres_num, clinic_name, city) REFERENCES presciption(pres_num, clinic_name, city),
+    FOREIGN KEY (pres_num, clinic_name, city) 
+    REFERENCES presciption(pres_num, clinic_name, city),
     FOREIGN KEY (pat_SSN) REFERENCES patient(pat_SSN),
     FOREIGN KEY (phys_SSN) REFERENCES doctor(phys_SSN)
-)
+);
 
 CREATE TABLE drug_company(
     company_name varchar(20) PRIMARY KEY,
@@ -104,7 +86,8 @@ CREATE TABLE includes( --relation between drug and prescription
     drug_name varchar(20),
     company_name varchar(20),
     PRIMARY KEY (pres_num, clinic_name, city, drug_name, company_name),
-    FOREIGN KEY (pres_num, clinic_name, city) REFERENCES presciption(pres_num, clinic_name, city),
+    FOREIGN KEY (pres_num, clinic_name, city)
+     REFERENCES presciption(pres_num, clinic_name, city),
     FOREIGN KEY (drug_name, company_name) REFERENCES drug(drug_name, company_name)
 );
 
@@ -158,18 +141,23 @@ CREATE TABLE contract( --relationship between drug company and physical pharmacy
 For the operations given below, indicate whether execution of the operation would violate some "primary key" or "integrity constraints". If your answer is yes, specify the constraints (from the above list) that would be violated
 
 ### i Insert tuple (a1, b10, d20, 35) into R3
+Violates FK1
 
 
 ### ii Insert tuple (s500, d20, 75) into R4
+No violations
 
 ## 2.b
 For the operations given below, indicate whether execution of the operation would violate any "foreign key constraints". If your answer is yes, specify the constraints (from the above list) that would be violated. Apply `CASCADE` policy for delete operations and `SET NULL` policy for update operations. Update the tables after applying those policies.
 
 ### i Delete tuple (d30, 150, 300) from R2
+No violation
 
 ### ii Update tuple (s400, 30, 555) in R5 to (6000, 60, 66)
+No violation
 
 ### iii Update tuple (s100, 20, 555) in R5 to (6000, 60, 666)
+Violates FK3, resulting in a row 5 tuple of `(NULL, NULL, 6000)`
 
 
 ## 2.c
