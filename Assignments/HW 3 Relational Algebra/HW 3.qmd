@@ -6,3 +6,39 @@ format:
     pdf:
         highlight: github
 ---
+
+**1. Find all distinct parts supplied by Pullman stores. Return “pid”s of those parts**
+
+$\Pi_{\text{pid}} (\text{Catalog} \bowtie \sigma_{\text{city}} = \text{'Pullman'} (\text{Suppliers}))$
+
+![](q1.jpg)
+
+
+**2. Find the suppliers in Pullman who supply a yellow part for less than $11. Return “sid”s
+and names for those suppliers**
+
+$$\Pi_{\text{sid, sname}} (\sigma_{\text{city}} = \text{'Pullman'} ∧ \text{color} = \text{'yellow'} ∧ \text{price} < 11 (\text{Parts} \bowtie \text{Suppliers} \bowtie \text{Catalog}))$$
+
+![](q2.jpg)
+
+**3.  Find all parts which are provided by some supplier (i.e., they appear in the catalog) but
+they were never ordered by a customer. Return the “pid”s and names of those parts.**
+
+$$\Pi_{\text{pid, pname}} (\text{Parts} \bowtie (\Pi_{\text{pid}} (\text{Catalog}) - \Pi_{\text{pid}} (\text{Orders})))
+$$
+
+![](q3.jpg)
+
+**4. Find all customers who ordered one of the products that Andy ordered. Return names and cities of those customers and the `pid` of the products they ordered**
+
+$$\Pi_{\text{cname, city, pid}} (\text{Customers} \bowtie \text{Orders} \bowtie (\Pi_\text{pid}(\text{Orders}) (\sigma_{\text{cname}} = \text{'Andy'} (\text{Customers}))))$$
+
+![](q4.jpg)
+
+**5. Find the suppliers who have received orders from customers who live in the city where that supplier is located. Return `sid`, names, and cities of those suppliers.**
+
+$$\Pi_{\text{sid, sname, city}} (\text{Customers} \bowtie \text{Orders} \bowtie \text{Suppliers})$$
+
+![](q5.jpg)
+
+**6. Find customers who ordered more than two items from a single supplier (i.e., the sum of the quantities of all parts the customer purchased from the supplier is at least *3*). Return names of the customers, `sid`s, and the number of items they ordered**
